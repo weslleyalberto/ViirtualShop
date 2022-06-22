@@ -41,7 +41,7 @@ namespace VirtualShop.ProductApi.Repository
 
         public async Task<IEnumerable<Category>> GetCategoriesProducts()
         {
-            return await _context.Categories.Include(c=> c.Products).AsNoTracking().ToListAsync();
+            return await _context.Categories.Include(c=> c.Products).ToListAsync();
         }
 
         public async Task<Category> Update(Category category)
