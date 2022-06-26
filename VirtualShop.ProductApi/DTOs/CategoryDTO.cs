@@ -10,6 +10,6 @@ namespace VirtualShop.ProductApi.DTOs
         [MinLength(3, ErrorMessage = "{0} deve ter no mínimo {1} caracteres!")]
         [MaxLength(100, ErrorMessage = "{0} deve conter no máximo {1} caracteres!")]
         public string? Name { get; set; }
-        public ICollection<Product>? Products { get; set; }
+        public  ICollection<Product>? Products { get; set; }
     }
 }

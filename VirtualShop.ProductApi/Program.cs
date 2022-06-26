@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 using VirtualShop.ProductApi.Context;
 using VirtualShop.ProductApi.Repository;
 using VirtualShop.ProductApi.Services;
@@ -7,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(j=> j.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
